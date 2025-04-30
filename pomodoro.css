@@ -1,0 +1,94 @@
+body {
+  background: linear-gradient(to bottom right, navy, black);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.sidebar {
+height: 100vh; 
+width: 220px; 
+background: white; 
+color: #000080;
+position: fixed; 
+top: 0;
+left: 0;
+padding-top: 20px; 
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+
+.sidebar a {
+color: #000080;
+padding: 15px;
+text-decoration: none;
+font-size: 1.2rem;
+margin-bottom: 10px;
+font-weight: normal;
+transition: font-weight 0.2s ease;
+}
+
+.sidebar a:hover {
+font-weight:bold;
+
+}
+
+.content {
+  margin-left: 250px; 
+  padding: 0;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+ 
+#circle {
+  width: 200px;
+  height: 200px;
+  border: 20px solid violet; 
+  border-radius: 50%;
+  box-shadow: 0 0 20px violet;
+  opacity: 1;
+  transition: border-width 0.2s linear, opacity 0.2s linear; /* smooth change */
+  
+}
+
+
+#time {
+  margin-top: 20px;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+#controls {
+  margin-top: 30px;
+}
+
+#controls button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: 2px solid violet;
+  background: none;
+  color: violet;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#controls button:hover {
+  background: violet;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="todo.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+  <div class="sidebar">
+    
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="todo.html"><i class="fas fa-check-circle"></i> To-Do List</a>
+        <a href="gratitude.html"><i class="fas fa-heart"></i> Gratitude</a>
+        <a href="pomodoro.html"><i class="fas fa-clock"></i> Pomodoro</a>
+  </div>
+
+  <div class="content">
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button class="add-btn" onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+  </div>
+
+
+  <script src="todo.js"></script>
+</body>
+</html>
+

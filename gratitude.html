@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gratitude Journal</title>
+  <link rel="stylesheet" href="gratitude.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="todo.html"><i class="fas fa-check-circle"></i> To-Do List</a>
+    <a href="gratitude.html"><i class="fas fa-heart"></i> Gratitude</a>
+    <a href="pomodoro.html"><i class="fas fa-clock"></i> Pomodoro</a>
+  </div>
+
+  <div class="content">
+    <button id="openInput" class="open-input-btn">+</button>
+
+    <div id="inputForm" class="input-form">
+      <textarea id="gratitudeText" placeholder="Write your gratitude here..."></textarea>
+      <input type="date" id="gratitudeDate">
+      <button id="submitGratitude">Submit</button>
+    </div>
+      <h2>Your Gratitude Cards</h2>
+      <div class="line"></div>
+    <!-- The cards container -->
+    <div class="cards" id="cardsContainer">
+      <!-- Cards will be added here dynamically -->
+    </div>
+
+    <!-- The popup for card details -->
+    <div class="card-popup" id="popup">
+      <div class="popup-content">
+        <span class="close-btn" id="closePopup">&times;</span>
+        <div id="popupText"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="gratitude.js"></script>
+</body>
+</html>

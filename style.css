@@ -1,0 +1,111 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #000080, #000000);
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #b8b4b4;
+  margin-bottom: 20px;
+  max-width: 1000px;
+  margin: 0 auto;;
+}
+
+nav {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Increased gap for more space between links */
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: transparent;
+  border-radius: 50px;
+  padding: 10px 40px; /* Increased padding for more length */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  min-width: 600px;
+  border-style: dashed;
+  border-color: #aba2a2;
+  
+}
+
+nav a {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  display: flex;
+  align-content: space-between;
+}
+
+nav a:hover {
+  color: white;
+  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white, 0 0 4px white, 0 0 8px white;;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background: none;
+  border: 2px solid #8A2BE2; /* Violet */
+  color: #8A2BE2;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+  text-decoration: none;
+  box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white;
+  position: absolute;
+  right: 25%;
+  top: 70%
+}
+
+.cta-button:hover {
+  background: #8A2BE2;
+  color: white;
+  box-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2;
+}
+
+main {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #000080, #000000);
+  z-index: -1;
+}

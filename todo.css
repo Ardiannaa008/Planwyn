@@ -1,0 +1,178 @@
+
+
+/* Basic Styling */
+body {
+  background: linear-gradient(to bottom right, #000080, #000000);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+ /* padding: 40px;*/
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #000080, #000000);
+  z-index: -1;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sidebar {
+  height: 100vh; 
+  width: 220px; 
+  background: white; 
+  color: #000080;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  padding-top: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar a {
+  color: #000080;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: normal;
+  transition: font-weight 0.2s ease;
+}
+
+.sidebar a:hover {
+  font-weight:bold;
+  
+}
+
+.content {
+  margin-left: 250px; 
+  padding: 20px;
+  width: 70%;
+}
+.todo-container {
+  
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 2rem;
+ 
+}
+
+/* To-Do List Styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: rgba(128, 128, 128, 0.321); 
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  backdrop-filter: blur(10px); 
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+li:hover {
+  background-color: rgba(128, 128, 128, 0.4); /* Slightly darker on hover */
+  backdrop-filter: blur(15px);
+}
+
+li.done {
+  background-color: rgba(128, 128, 128, 0.092);;
+  text-decoration: line-through;
+  
+}
+
+li .task-text {
+  flex-grow: 1;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+button.add-btn{
+  background: #ffffffac;
+  color: #000000;
+}
+
+.done-btn {
+  color: #27ae60;
+}
+
+.done-btn.done-clicked {
+  color: #bdc3c7;
+}
+
+.delete-btn {
+  color: #ffffffac;
+}
+
+.delete-btn:hover {
+  color: #c0392b;
+}
+
+/* Input and Add Button */
+input, button {
+ padding: 10px;
+ margin: 10px;
+  font-size: 16px;
+ 
+}
+
+input {
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #95a5a6;
+}
+
+button.add-btn {
+  padding: 12px 24px;
+  background: #6A1E9C; 
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+button.add-btn:hover {
+  transform: scale(1.1); 
+  background-color: #6A1E9C; 
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+
+}
+
+
+
