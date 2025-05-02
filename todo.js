@@ -23,6 +23,7 @@ function addTaskToList(text, done = false) {
 
   const span = document.createElement("span");
   span.textContent = text;
+  span.classList.add("text-text");
 
   const buttonContainer = document.createElement("div");
   buttonContainer.classList.add("button-container");
@@ -66,3 +67,8 @@ function saveTasks() {
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('active');
+}
+
