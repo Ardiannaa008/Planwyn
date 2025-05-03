@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Gratitude Journal</title>
   <link rel="stylesheet" href="gratitude.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+  </button>
+
   <div class="sidebar">
     
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
@@ -25,12 +31,12 @@
     </div>
       <h2>Your Gratitude Cards</h2>
       <div class="line"></div>
-    <!-- The cards container -->
+  
     <div class="cards" id="cardsContainer">
-      <!-- Cards will be added here dynamically -->
+    
     </div>
 
-    <!-- The popup for card details -->
+   
     <div class="card-popup" id="popup">
       <div class="popup-content">
         <span class="close-btn" id="closePopup">&times;</span>

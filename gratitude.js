@@ -9,13 +9,13 @@ const popup = document.getElementById('popup');
 const popupText = document.getElementById('popupText');
 const closePopup = document.getElementById('closePopup');
 
-// Show the input form when clicking the + button
+
 openInputBtn.addEventListener('click', () => {
   inputForm.style.display = 'block';
-  openInputBtn.style.display = 'none'; // Hide the button when the form is visible
+  openInputBtn.style.display = 'none'; 
 });
 
-// Submit the gratitude entry and hide the form
+
 submitGratitudeBtn.addEventListener('click', () => {
   const text = gratitudeText.value;
   const date = gratitudeDate.value;
@@ -23,13 +23,13 @@ submitGratitudeBtn.addEventListener('click', () => {
   if (text && date) {
     addNewCard(text, date);
     inputForm.style.display = 'none';
-    openInputBtn.style.display = 'block'; // Show the + button again
-    gratitudeText.value = ''; // Clear input
+    openInputBtn.style.display = 'block'; 
+    gratitudeText.value = ''; 
     gratitudeDate.value = '';
   }
 });
 
-// Function to add a new card
+
 function addNewCard(text, date) {
   const card = document.createElement('div');
   card.classList.add('card');
@@ -47,20 +47,20 @@ function addNewCard(text, date) {
   `;
 
   cardsContainer.appendChild(card);
-  saveEntriesToLocalStorage(); // Save to local storage when a new card is added
+  saveEntriesToLocalStorage(); 
 }
 
-// Event listener for clicking on cards and dropdown menu
+
 cardsContainer.addEventListener('click', (e) => {
   const card = e.target.closest('.card');
   const dropdown = card?.querySelector('.dropdown-menu');
   
-  // If clicking on the three dots, toggle the dropdown
+  
   if (e.target.classList.contains('three-dots')) {
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
   }
 
-  // Edit button functionality
+  
   const editBtn = card?.querySelector('.edit-btn');
   if (e.target === editBtn) {
     const text = card.querySelector('p').innerText;
@@ -73,31 +73,29 @@ cardsContainer.addEventListener('click', (e) => {
     `;
     popup.style.display = 'flex';
 
-    // Save the edited content
+    
     document.getElementById('saveEdit').addEventListener('click', () => {
       const newText = document.getElementById('editText').value;
       card.querySelector('p').innerText = newText;
-      saveEntriesToLocalStorage(); // Update local storage after editing
+      saveEntriesToLocalStorage(); 
       popup.style.display = 'none';
-      dropdown.style.display = 'none'; // Close dropdown after editing
+      dropdown.style.display = 'none'; 
     });
   }
 
-  // Delete button functionality
+  
   const deleteBtn = card?.querySelector('.delete-btn');
   if (e.target === deleteBtn) {
     card.remove();
-    saveEntriesToLocalStorage(); // Update local storage after deleting a card
-    dropdown.style.display = 'none'; // Close dropdown after deleting
+    saveEntriesToLocalStorage(); 
+    dropdown.style.display = 'none'; 
   }
 });
 
-// Close the popup when clicking on the 'X'
 closePopup.addEventListener('click', () => {
   popup.style.display = 'none';
 });
 
-// Save entries to local storage
 function saveEntriesToLocalStorage() {
   const cards = document.querySelectorAll('.card');
   const entries = [];
@@ -108,20 +106,23 @@ function saveEntriesToLocalStorage() {
     entries.push({ date, text });
   });
 
-  // Save the entries to localStorage
+ 
   localStorage.setItem('gratitudeEntries', JSON.stringify(entries));
 }
 
-// Load saved entries from local storage on page load
+
 window.addEventListener('load', () => {
   const savedEntries = JSON.parse(localStorage.getItem('gratitudeEntries')) || [];
   savedEntries.forEach(entry => addNewCard(entry.text, entry.date));
 });
 
-// Close dropdown when clicking outside the card
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.card')) {
     const openDropdowns = document.querySelectorAll('.dropdown-menu');
     openDropdowns.forEach(dropdown => dropdown.style.display = 'none');
   }
 });
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('active');
+}
