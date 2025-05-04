@@ -107,3 +107,8 @@ document.getElementById('reset').addEventListener('click', resetTimer);
 
 // Initial state
 showButtons('start', 'reset');
+
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('active');
+}
