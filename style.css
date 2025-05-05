@@ -36,9 +36,28 @@ p {
   margin: 0 auto;;
 }
 
+
+.logo {
+  padding: 0;
+  margin: 0;
+  height: 150px;
+  width: auto;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 10;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
 nav ul {
   position: absolute;
-  top: 20px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -111,9 +130,9 @@ body::before {
 
 .checkbtn {
   color: white;
-  font-size: 30px;
+  font-size: 50px;
   position: absolute;
-  top: 20px;
+  top: 40px;
   right: 40px;
   cursor: pointer;
   z-index: 1000;
@@ -125,7 +144,11 @@ body::before {
 }
 
 
+
+
 @media (max-width: 858px) {
+  
+
   .checkbtn {
     display: block;
   }
