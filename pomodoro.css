@@ -109,6 +109,12 @@ font-weight:bold;
   background-color: transparent;
 }
 
+#pomodoro-count {
+  margin-top: 20px; 
+  font-size: 18px; 
+  color: violet;
+}
+
 @media (max-width: 768px) {
  
 
@@ -135,3 +141,5 @@ font-weight:bold;
     padding-top: 30%;
   }
 }
+
+

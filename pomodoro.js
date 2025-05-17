@@ -1,11 +1,19 @@
-let totalTime = 1500; // 25 minutes in seconds
+let workTime = 1500;       // 25 minutes
+let shortBreakTime = 300;  // 5 minutes
+let longBreakTime = 900;   // 15 minutes
+
+let totalTime = workTime;
 let elapsedTime = 0;
 let isRunning = false;
-let timerInterval;
 let lastTimestamp;
 
-const initialBorderWidth = 20; // starting thickness
-const minimumBorderWidth = 2;  // minimum thickness
+const initialBorderWidth = 20; 
+const minimumBorderWidth = 2;  
+
+let pomodoroCount = localStorage.getItem('pomodoroCount');
+pomodoroCount = pomodoroCount ? Number(pomodoroCount) : 0;
+
+let mode = 'work'; 
 
 function updateCircleOpacity() {
   const circle = document.getElementById('circle');
@@ -46,6 +54,8 @@ function continueTimer() {
 function resetTimer() {
   isRunning = false;
   elapsedTime = 0;
+  mode = 'work';
+  totalTime = workTime;
   updateCircleOpacity();
   updateCircleBorder();
   updateTimeDisplay();
@@ -59,17 +69,37 @@ function update(currentTime) {
   lastTimestamp = currentTime;
 
   elapsedTime += delta;
-  
+
   updateCircleOpacity();
   updateCircleBorder();
   updateTimeDisplay();
 
   if (elapsedTime >= totalTime) {
-    isRunning = false;
     elapsedTime = totalTime;
     updateCircleOpacity();
     updateCircleBorder();
     updateTimeDisplay();
+
+    isRunning = false;
+
+    if (mode === 'work') {
+      pomodoroCount++;
+      localStorage.setItem('pomodoroCount', pomodoroCount);
+      updatePomodoroCount();
+
+      if (pomodoroCount % 4 === 0) {
+        mode = 'break';
+        totalTime = longBreakTime;
+      } else {
+        mode = 'break';
+        totalTime = shortBreakTime;
+      }
+    } else {
+      mode = 'work';
+      totalTime = workTime;
+    }
+
+    elapsedTime = 0;
     showButtons('start', 'reset');
     return;
   }
@@ -99,16 +129,24 @@ function showButtons(button1, button2) {
   });
 }
 
-// Event listeners
+function updatePomodoroCount() {
+  const countElem = document.getElementById('pomodoro-count');
+  if (countElem) {
+    countElem.textContent = `Pomodoros completed: ${pomodoroCount}`;
+  }
+}
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('active');
+}
+
 document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('pause').addEventListener('click', pauseTimer);
 document.getElementById('continue').addEventListener('click', continueTimer);
 document.getElementById('reset').addEventListener('click', resetTimer);
 
-// Initial state
+updatePomodoroCount();
 showButtons('start', 'reset');
-
-
-function toggleSidebar() {
-  document.querySelector('.sidebar').classList.toggle('active');
-}
+updateCircleOpacity();
+updateCircleBorder();
+updateTimeDisplay();
