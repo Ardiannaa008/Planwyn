@@ -23,8 +23,8 @@ h1 {
   font-size: 3rem;
   margin-bottom: 25px;
   font-weight: 600;
-  color: white;
-  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white;
+  color: #CCCCCC; 
+  text-shadow: 0 0 3px #CCCCCC, 0 0 6px #999999, 0 0 12px #666666;
 }
 
 p {
@@ -98,8 +98,8 @@ nav li a:hover {
 .cta-button {
   padding: 12px 24px;
   background: none;
-  border: 2px solid #8A2BE2; 
-  color: #8A2BE2;
+  border: 2px solid #FF00FF; 
+  color: #FF00FF;
   border-radius: 50px;
   cursor: pointer;
   font-size: 18px;
@@ -112,9 +112,9 @@ nav li a:hover {
 }
 
 .cta-button:hover {
-  background: #8A2BE2;
+  background: #FF00FF;
   color: white;
-  box-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2;
+  box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
 }
 
 body::before {
