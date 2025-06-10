@@ -86,7 +86,7 @@ function update(currentTime) {
       pomodoroCount++;
       localStorage.setItem('pomodoroCount', pomodoroCount);
       updatePomodoroCount();
-
+  
       if (pomodoroCount % 4 === 0) {
         mode = 'break';
         totalTime = longBreakTime;
@@ -98,8 +98,9 @@ function update(currentTime) {
       mode = 'work';
       totalTime = workTime;
     }
-
+  
     elapsedTime = 0;
+    updateTimeDisplay();
     showButtons('start', 'reset');
     return;
   }
@@ -150,3 +151,25 @@ showButtons('start', 'reset');
 updateCircleOpacity();
 updateCircleBorder();
 updateTimeDisplay();
+
+function applyCustomTimes() {
+  const workInput = document.getElementById('custom-work').value;
+  const shortBreakInput = document.getElementById('custom-short-break').value;
+  const longBreakInput = document.getElementById('custom-long-break').value;
+
+  workTime = parseInt(workInput) * 60;
+  shortBreakTime = parseInt(shortBreakInput) * 60;
+  longBreakTime = parseInt(longBreakInput) * 60;
+
+  if (mode === 'work') {
+    totalTime = workTime;
+  } else {
+    totalTime = mode === 'break' && (pomodoroCount % 4 === 0) ? longBreakTime : shortBreakTime;
+  }
+
+  elapsedTime = 0;
+  updateTimeDisplay();
+  updateCircleOpacity();
+  updateCircleBorder();
+}
+

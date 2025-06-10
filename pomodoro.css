@@ -115,6 +115,32 @@ font-weight:bold;
   color: violet;
 }
 
+#custom-settings {
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+}
+
+#custom-settings input {
+  margin: 5px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid violet;
+}
+
+#custom-settings button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: 2px solid violet;
+  background: violet;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+
 @media (max-width: 768px) {
  
 
@@ -140,6 +166,14 @@ font-weight:bold;
     padding: 5px;
     padding-top: 30%;
   }
+  #custom-settings {
+    display: flex;
+    flex-direction: column;
+  }
+  #costum-settings label {
+    width: 100px;
+  }
+  #custom-settings button {
+    align-self: center;
+  }
 }
-
-
