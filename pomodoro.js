@@ -150,6 +150,19 @@ function toggleSidebar() {
   document.querySelector('.sidebar').classList.toggle('active');
 }
 
+document.getElementById('start').addEventListener('click', () => {
+  if (!alarmAudio) {
+    alarmAudio = new Audio('sounds/alarm-327234.mp3');
+    alarmAudio.play().then(() => {
+      alarmAudio.pause();
+      alarmAudio.currentTime = 0;
+    });
+  }
+
+  startTimer();
+});
+
+
 
 function playAlarm() {
   alarmAudio = new Audio('sounds/alarm-327234.mp3');
