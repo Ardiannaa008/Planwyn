@@ -7,6 +7,9 @@ let elapsedTime = 0;
 let isRunning = false;
 let lastTimestamp;
 
+let alarmAudio; 
+
+
 const initialBorderWidth = 20; 
 const minimumBorderWidth = 2;  
 
@@ -82,6 +85,8 @@ function update(currentTime) {
 
     isRunning = false;
 
+    const previousMode = mode;
+
     if (mode === 'work') {
       pomodoroCount++;
       localStorage.setItem('pomodoroCount', pomodoroCount);
@@ -102,6 +107,10 @@ function update(currentTime) {
     elapsedTime = 0;
     updateTimeDisplay();
     showButtons('start', 'reset');
+
+    playAlarm();
+    showAlarmPopup(previousMode === 'work' ? 'Work session done! Time for a break.' : 'Break finished! Time to work.');
+
     return;
   }
 
@@ -140,6 +149,32 @@ function updatePomodoroCount() {
 function toggleSidebar() {
   document.querySelector('.sidebar').classList.toggle('active');
 }
+
+
+function playAlarm() {
+  alarmAudio = new Audio('sounds/alarm-327234.mp3');
+  alarmAudio.loop = true;
+  alarmAudio.play();
+}
+
+
+
+function showAlarmPopup(message) {
+  const popup = document.getElementById('alarm-popup');
+  document.getElementById('alarm-message').textContent = message;
+  popup.classList.remove('hidden');
+}
+
+function closeAlarmPopup() {
+  document.getElementById('alarm-popup').classList.add('hidden');
+  if (alarmAudio) {
+    alarmAudio.pause();
+    alarmAudio.currentTime = 0; 
+  }
+}
+
+
+
 
 document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('pause').addEventListener('click', pauseTimer);

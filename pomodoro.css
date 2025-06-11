@@ -140,6 +140,35 @@ font-weight:bold;
   transition: all 0.3s;
 }
 
+#alarm-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  text-align: center;
+}
+
+.popup-card {
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 90%;
+  font-size: 1.2rem;
+}
+
+#alarm-popup.hidden {
+  display: none;
+}
+
+
 
 @media (max-width: 768px) {
  
