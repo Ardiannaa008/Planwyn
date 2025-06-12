@@ -145,8 +145,28 @@ body {
   font-size: 1.2rem;
 }
 
-.hidden {
-  display: none;
+#openInBrowserPopup {
+  display: none; 
+  position: fixed; 
+  top: 10px; 
+  left: 10px; 
+  right: 10px; 
+  background: #ffefc5; 
+  padding: 16px; 
+  z-index: 10000; 
+  border-radius: 10px; 
+  text-align: center; 
+  font-family: sans-serif;
+}
+
+#openInBrowserBtn {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  background: #007bff; 
+  color: white; 
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

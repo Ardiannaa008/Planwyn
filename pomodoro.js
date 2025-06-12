@@ -200,10 +200,20 @@ document.getElementById('apply-times').addEventListener('click', applyCustomTime
 document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
 
 window.addEventListener('DOMContentLoaded', () => {
-  if (navigator.userAgent.includes('Instagram')) {
-    document.getElementById('insta-warning').classList.remove('hidden');
-  }
   updatePomodoroCount();
   updateVisuals();
   showButtons('start', 'reset');
 });
+
+function isInAppBrowser() {
+  const ua = navigator.userAgent || navigator.vendor;
+  return /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(ua);
+}
+
+if (isInAppBrowser()) {
+  document.getElementById('openInBrowserPopup').style.display = 'block';
+
+  document.getElementById('openInBrowserBtn').addEventListener('click', () => {
+    window.open(window.location.href, '_blank'); // This opens it in the default browser (if allowed)
+  });
+}
