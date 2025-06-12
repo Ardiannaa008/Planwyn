@@ -185,12 +185,12 @@ function applyCustomTimes() {
   updateVisuals();
 }
 
-// Sidebar toggle (if needed)
+
 function toggleSidebar() {
   document.querySelector('.sidebar').classList.toggle('active');
 }
 
-// Event listeners
+
 document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('pause').addEventListener('click', pauseTimer);
 document.getElementById('continue').addEventListener('click', continueTimer);
@@ -201,14 +201,16 @@ window.addEventListener('DOMContentLoaded', () => {
   updateVisuals();
   showButtons('start', 'reset');
 
-  function isInAppBrowser() {
-    const ua = navigator.userAgent || navigator.vendor;
-    const isInApp = /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(ua);
-    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
-    return isInApp && isMobile;
+  
+  function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   }
 
-  if (isInAppBrowser()) {
+  function isInAppBrowser() {
+    return /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(navigator.userAgent);
+  }
+
+  if (isInAppBrowser() && isMobileDevice()) {
     const popup = document.getElementById('openInBrowserPopup');
     const dismissBtn = document.getElementById('dismissPopupBtn');
 
@@ -218,5 +220,4 @@ window.addEventListener('DOMContentLoaded', () => {
       popup.classList.add('hidden');
     });
   }
-
 });
