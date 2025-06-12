@@ -195,25 +195,24 @@ document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('pause').addEventListener('click', pauseTimer);
 document.getElementById('continue').addEventListener('click', continueTimer);
 document.getElementById('reset').addEventListener('click', resetTimer);
-document.getElementById('alarm-close').addEventListener('click', closeAlarmPopup);
-document.getElementById('apply-times').addEventListener('click', applyCustomTimes);
-document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
 
 window.addEventListener('DOMContentLoaded', () => {
   updatePomodoroCount();
   updateVisuals();
   showButtons('start', 'reset');
+
+
+  function isInAppBrowser() {
+    const ua = navigator.userAgent || navigator.vendor;
+    return /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(ua);
+  }
+
+  if (isInAppBrowser()) {
+    document.getElementById('openInBrowserPopup').classList.remove = 'block';
+
+    document.getElementById('openInBrowserBtn').addEventListener('click', () => {
+      window.open(window.location.href, '_blank'); // This opens it in the default browser (if allowed)
+    });
+  }
+
 });
-
-function isInAppBrowser() {
-  const ua = navigator.userAgent || navigator.vendor;
-  return /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(ua);
-}
-
-if (isInAppBrowser()) {
-  document.getElementById('openInBrowserPopup').style.display = 'block';
-
-  document.getElementById('openInBrowserBtn').addEventListener('click', () => {
-    window.open(window.location.href, '_blank'); // This opens it in the default browser (if allowed)
-  });
-}
