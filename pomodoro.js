@@ -216,7 +216,5 @@ window.addEventListener('DOMContentLoaded', () => {
       popup.classList.add('hidden');
     });
   }
-  
-  
 
 });
