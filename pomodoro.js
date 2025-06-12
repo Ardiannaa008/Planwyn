@@ -203,7 +203,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function isInAppBrowser() {
     const ua = navigator.userAgent || navigator.vendor;
-    return /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(ua);
+    const isInApp = /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(ua);
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+    return isInApp && isMobile;
   }
 
   if (isInAppBrowser()) {

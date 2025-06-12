@@ -173,6 +173,10 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+.popup.hidden {
+  display: none;
+}
+
   
 @media (max-width: 768px) {
   .menu-toggle {
