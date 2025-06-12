@@ -208,7 +208,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   if (isInAppBrowser()) {
-    document.getElementById('openInBrowserPopup').classList.remove = 'block';
+    const popup = document.getElementById('openInBrowserPopup');
+    popup.classList.remove('hidden');
 
     document.getElementById('openInBrowserBtn').addEventListener('click', () => {
       window.open(window.location.href, '_blank'); // This opens it in the default browser (if allowed)
