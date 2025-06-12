@@ -14,7 +14,7 @@ const initialBorderWidth = 20;
 const minimumBorderWidth = 2;  
 
 let pomodoroCount = Number(localStorage.getItem('pomodoroCount')) || 0;
-let mode = 'work'; // 'work' or 'break'
+let mode = 'work'; 
 
 function updateCircleOpacity() {
   const circle = document.getElementById('circle');
@@ -76,7 +76,7 @@ function update(currentTime) {
 
     isRunning = false;
 
-    // Switch mode logic
+   
     if (mode === 'work') {
       pomodoroCount++;
       localStorage.setItem('pomodoroCount', pomodoroCount);
