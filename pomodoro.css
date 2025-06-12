@@ -148,27 +148,16 @@ body {
 #openInBrowserPopup {
   display: none; 
   position: fixed; 
-  top: 10px; 
-  left: 10px; 
-  right: 10px; 
-  background: #ffefc5; 
-  padding: 16px; 
+  top: 20%; 
+  left: 10%; 
+  right: 10%; 
+  background: white; 
+  padding: 20px; 
   z-index: 10000; 
   border-radius: 10px; 
   text-align: center; 
   font-family: sans-serif;
-}
-
-.popup {
-  position: fixed;
-  top: 20%;
-  left: 10%;
-  right: 10%;
-  padding: 20px;
-  background: white;
   border: 2px solid #333;
-  z-index: 9999;
-  text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
