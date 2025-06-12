@@ -8,39 +8,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-
   <button class="menu-toggle" onclick="toggleSidebar()">
     <i class="fas fa-bars"></i>
   </button>
-  
+
   <div class="sidebar">
-    
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="todo.html"><i class="fas fa-check-circle"></i> To-Do List</a>
     <a href="gratitude.html"><i class="fas fa-heart"></i> Gratitude</a>
     <a href="pomodoro.html"><i class="fas fa-clock"></i> Pomodoro</a>
   </div>
+
   <div class="content">
     <div id="circle"></div>
-
     <div id="time">25:00</div>
 
     <div id="controls">
       <button id="start">Start</button>
-      <button id="pause">Pause</button>
-      <button id="continue">Continue</button>
+      <button id="pause" class="hidden">Pause</button>
+      <button id="continue" class="hidden">Continue</button>
       <button id="reset">Reset</button>
     </div>
 
     <div id="pomodoro-count">Pomodoros completed: 0</div>
+
     <div id="custom-settings">
       <h3>Customize Timer (minutes)</h3>
-      <label>Work: <input type="number" id="custom-work" value="25" min="1" /></label>
-      <label>Short Break: <input type="number" id="custom-short-break" value="5" min="1" /></label>
-      <label>Long Break: <input type="number" id="custom-long-break" value="15" min="1" /></label>
+      <label>Work: <input type="number" id="custom-work" value="25" min="1"></label>
+      <label>Short Break: <input type="number" id="custom-short-break" value="5" min="1"></label>
+      <label>Long Break: <input type="number" id="custom-long-break" value="15" min="1"></label>
       <button onclick="applyCustomTimes()">Apply</button>
     </div>
-    
 
     <div id="alarm-popup" class="hidden">
       <div class="popup-card">
@@ -48,18 +46,14 @@
         <button onclick="closeAlarmPopup()">OK</button>
       </div>
     </div>
-    
-    <div id="insta-warning" class="hidden">
-  For full functionality (like sound), please open this page in your browser.
-  <br />
-  <button onclick="openInBrowser()">Open in Browser</button>
-    </div>
 
+    <div id="insta-warning" class="hidden">
+      For full functionality (like sound), please open this page in your browser.
+      <br>
+      <button onclick="openInBrowser()">Open in Browser</button>
+    </div>
   </div>
 
-
-
   <script src="pomodoro.js"></script>
-
 </body>
 </html>

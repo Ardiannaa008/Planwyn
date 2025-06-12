@@ -1,4 +1,4 @@
-let workTime = 1500;       // 25 minutes
+let workTime = 1500;       // 25 minutes in seconds
 let shortBreakTime = 300;  // 5 minutes
 let longBreakTime = 900;   // 15 minutes
 
@@ -7,16 +7,14 @@ let elapsedTime = 0;
 let isRunning = false;
 let lastTimestamp;
 
-let alarmAudio; 
-
+let alarmAudio = new Audio('sounds/alarm-327234.mp3');
+alarmAudio.loop = true;
 
 const initialBorderWidth = 20; 
 const minimumBorderWidth = 2;  
 
-let pomodoroCount = localStorage.getItem('pomodoroCount');
-pomodoroCount = pomodoroCount ? Number(pomodoroCount) : 0;
-
-let mode = 'work'; 
+let pomodoroCount = Number(localStorage.getItem('pomodoroCount')) || 0;
+let mode = 'work'; // 'work' or 'break'
 
 function updateCircleOpacity() {
   const circle = document.getElementById('circle');
@@ -41,17 +39,17 @@ function startTimer() {
 }
 
 function pauseTimer() {
+  if (!isRunning) return;
   isRunning = false;
   showButtons('continue', 'reset');
 }
 
 function continueTimer() {
-  if (!isRunning) {
-    isRunning = true;
-    lastTimestamp = performance.now();
-    requestAnimationFrame(update);
-    showButtons('pause', 'reset');
-  }
+  if (isRunning) return;
+  isRunning = true;
+  lastTimestamp = performance.now();
+  requestAnimationFrame(update);
+  showButtons('pause', 'reset');
 }
 
 function resetTimer() {
@@ -59,10 +57,9 @@ function resetTimer() {
   elapsedTime = 0;
   mode = 'work';
   totalTime = workTime;
-  updateCircleOpacity();
-  updateCircleBorder();
-  updateTimeDisplay();
+  updateVisuals();
   showButtons('start', 'reset');
+  stopAlarm();
 }
 
 function update(currentTime) {
@@ -73,25 +70,18 @@ function update(currentTime) {
 
   elapsedTime += delta;
 
-  updateCircleOpacity();
-  updateCircleBorder();
-  updateTimeDisplay();
-
   if (elapsedTime >= totalTime) {
     elapsedTime = totalTime;
-    updateCircleOpacity();
-    updateCircleBorder();
-    updateTimeDisplay();
+    updateVisuals();
 
     isRunning = false;
 
-    const previousMode = mode;
-
+    // Switch mode logic
     if (mode === 'work') {
       pomodoroCount++;
       localStorage.setItem('pomodoroCount', pomodoroCount);
       updatePomodoroCount();
-  
+
       if (pomodoroCount % 4 === 0) {
         mode = 'break';
         totalTime = longBreakTime;
@@ -99,22 +89,30 @@ function update(currentTime) {
         mode = 'break';
         totalTime = shortBreakTime;
       }
+
+      playAlarm();
+      showAlarmPopup('Work session done! Time for a break.');
     } else {
       mode = 'work';
       totalTime = workTime;
+      playAlarm();
+      showAlarmPopup('Break finished! Time to work.');
     }
-  
+
     elapsedTime = 0;
-    updateTimeDisplay();
+    updateVisuals();
     showButtons('start', 'reset');
-
-    playAlarm();
-    showAlarmPopup(previousMode === 'work' ? 'Work session done! Time for a break.' : 'Break finished! Time to work.');
-
     return;
   }
 
+  updateVisuals();
   requestAnimationFrame(update);
+}
+
+function updateVisuals() {
+  updateCircleOpacity();
+  updateCircleBorder();
+  updateTimeDisplay();
 }
 
 function updateTimeDisplay() {
@@ -130,11 +128,11 @@ function updateTimeDisplay() {
 function showButtons(button1, button2) {
   const buttons = ['start', 'pause', 'continue', 'reset'];
   buttons.forEach(id => {
-    const button = document.getElementById(id);
+    const btn = document.getElementById(id);
     if (id === button1 || id === button2) {
-      button.classList.remove('hidden');
+      btn.classList.remove('hidden');
     } else {
-      button.classList.add('hidden');
+      btn.classList.add('hidden');
     }
   });
 }
@@ -146,31 +144,15 @@ function updatePomodoroCount() {
   }
 }
 
-function toggleSidebar() {
-  document.querySelector('.sidebar').classList.toggle('active');
-}
-
-document.getElementById('start').addEventListener('click', () => {
-  if (!alarmAudio) {
-    alarmAudio = new Audio('sounds/alarm-327234.mp3');
-    alarmAudio.play().then(() => {
-      alarmAudio.pause();
-      alarmAudio.currentTime = 0;
-    });
-  }
-
-  startTimer();
-});
-
-
-
 function playAlarm() {
-  alarmAudio = new Audio('sounds/alarm-327234.mp3');
-  alarmAudio.loop = true;
-  alarmAudio.play();
+  alarmAudio.currentTime = 0;
+  alarmAudio.play().catch(() => {});
 }
 
-
+function stopAlarm() {
+  alarmAudio.pause();
+  alarmAudio.currentTime = 0;
+}
 
 function showAlarmPopup(message) {
   const popup = document.getElementById('alarm-popup');
@@ -179,58 +161,49 @@ function showAlarmPopup(message) {
 }
 
 function closeAlarmPopup() {
-  document.getElementById('alarm-popup').classList.add('hidden');
-  if (alarmAudio) {
-    alarmAudio.pause();
-    alarmAudio.currentTime = 0; 
-  }
+  const popup = document.getElementById('alarm-popup');
+  popup.classList.add('hidden');
+  stopAlarm();
 }
-
-function openInBrowser() {
-  window.open(location.href, '_blank');
-}
-
-
-
-
-
-document.getElementById('start').addEventListener('click', startTimer);
-document.getElementById('pause').addEventListener('click', pauseTimer);
-document.getElementById('continue').addEventListener('click', continueTimer);
-document.getElementById('reset').addEventListener('click', resetTimer);
-
-updatePomodoroCount();
-showButtons('start', 'reset');
-updateCircleOpacity();
-updateCircleBorder();
-updateTimeDisplay();
 
 function applyCustomTimes() {
   const workInput = document.getElementById('custom-work').value;
   const shortBreakInput = document.getElementById('custom-short-break').value;
   const longBreakInput = document.getElementById('custom-long-break').value;
 
-  workTime = parseInt(workInput) * 60;
-  shortBreakTime = parseInt(shortBreakInput) * 60;
-  longBreakTime = parseInt(longBreakInput) * 60;
+  if (workInput) workTime = parseInt(workInput, 10) * 60;
+  if (shortBreakInput) shortBreakTime = parseInt(shortBreakInput, 10) * 60;
+  if (longBreakInput) longBreakTime = parseInt(longBreakInput, 10) * 60;
 
   if (mode === 'work') {
     totalTime = workTime;
   } else {
-    totalTime = mode === 'break' && (pomodoroCount % 4 === 0) ? longBreakTime : shortBreakTime;
+    totalTime = (pomodoroCount % 4 === 0) ? longBreakTime : shortBreakTime;
   }
 
   elapsedTime = 0;
-  updateTimeDisplay();
-  updateCircleOpacity();
-  updateCircleBorder();
+  updateVisuals();
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
+// Sidebar toggle (if needed)
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('active');
+}
 
-  if (ua.includes('Instagram')) {
+// Event listeners
+document.getElementById('start').addEventListener('click', startTimer);
+document.getElementById('pause').addEventListener('click', pauseTimer);
+document.getElementById('continue').addEventListener('click', continueTimer);
+document.getElementById('reset').addEventListener('click', resetTimer);
+document.getElementById('alarm-close').addEventListener('click', closeAlarmPopup);
+document.getElementById('apply-times').addEventListener('click', applyCustomTimes);
+document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (navigator.userAgent.includes('Instagram')) {
     document.getElementById('insta-warning').classList.remove('hidden');
   }
+  updatePomodoroCount();
+  updateVisuals();
+  showButtons('start', 'reset');
 });
-

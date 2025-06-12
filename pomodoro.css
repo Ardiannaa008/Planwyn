@@ -7,69 +7,55 @@ body {
 }
 
 .sidebar {
-height: 100vh; 
-width: 220px; 
-background: white; 
-color: #000080;
-position: fixed; 
-top: 0;
-left: 0;
-padding-top: 20px; 
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
+  height: 100vh;
+  width: 220px;
+  background: white;
+  color: #000080;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar a {
-color: #000080;
-padding: 15px;
-text-decoration: none;
-font-size: 1.2rem;
-margin-bottom: 10px;
-font-weight: normal;
-transition: font-weight 0.2s ease;
+  color: #000080;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: normal;
+  transition: font-weight 0.2s ease;
 }
 
 .sidebar a:hover {
-font-weight:bold;
-
+  font-weight: bold;
 }
 
 .content {
-  margin-left: 250px; 
-  padding: 0;
+  margin-left: 250px;
   width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-
-
- 
 #circle {
   width: 200px;
   height: 200px;
-  border: 20px solid violet; 
+  border: 20px solid violet;
   border-radius: 50%;
   box-shadow: 0 0 20px violet;
   opacity: 1;
-  transition: border-width 0.2s linear, opacity 0.2s linear; /* smooth change */
-  
+  transition: border-width 0.2s linear, opacity 0.2s linear;
 }
-
 
 #time {
   margin-top: 20px;
   font-size: 48px;
   font-weight: bold;
-  color: white;
   text-align: center;
-}
-
-#controls {
-  margin-top: 30px;
 }
 
 #controls button {
@@ -93,31 +79,27 @@ font-weight:bold;
   display: none;
 }
 
-
 .menu-toggle {
   display: none;
   position: fixed;
   top: 20px;
   right: 20px;
+  background: transparent;
   border: none;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 1001;
+  color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  color: white;
-  background-color: transparent;
+  z-index: 1001;
 }
 
 #pomodoro-count {
-  margin-top: 20px; 
-  font-size: 18px; 
+  margin-top: 20px;
+  font-size: 18px;
   color: violet;
 }
 
 #custom-settings {
   margin-top: 30px;
-  color: white;
   text-align: center;
 }
 
@@ -159,22 +141,11 @@ font-weight:bold;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  text-align: center;
   max-width: 90%;
   font-size: 1.2rem;
 }
 
-#alarm-popup.hidden {
-  display: none;
-}
-
-.hidden {
-  display: none;
-}
-
 @media (max-width: 768px) {
- 
-
   .menu-toggle {
     display: block;
   }
@@ -187,23 +158,19 @@ font-weight:bold;
 
   .sidebar.active {
     transform: translateX(0);
-    position: fixed;
-    height: 100%;
   }
 
   .content {
     margin-left: 0;
     width: 100%;
-    padding: 5px;
     padding-top: 30%;
   }
+
   #custom-settings {
     display: flex;
     flex-direction: column;
   }
-  #costum-settings label {
-    width: 100px;
-  }
+
   #custom-settings button {
     align-self: center;
   }
