@@ -201,7 +201,6 @@ window.addEventListener('DOMContentLoaded', () => {
   updateVisuals();
   showButtons('start', 'reset');
 
-
   function isInAppBrowser() {
     const ua = navigator.userAgent || navigator.vendor;
     return /Instagram|FBAN|FBAV|FB_IAB|FB4A|FBCR|FBIOS|FBSV|TikTok/i.test(ua);
@@ -209,11 +208,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (isInAppBrowser()) {
     const popup = document.getElementById('openInBrowserPopup');
+    const dismissBtn = document.getElementById('dismissPopupBtn');
+
     popup.classList.remove('hidden');
 
-    document.getElementById('openInBrowserBtn').addEventListener('click', () => {
-      window.open(window.location.href, '_blank'); // This opens it in the default browser (if allowed)
+    dismissBtn.addEventListener('click', () => {
+      popup.classList.add('hidden');
     });
   }
+  
+  
 
 });
