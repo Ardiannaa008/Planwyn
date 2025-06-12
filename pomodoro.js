@@ -186,6 +186,11 @@ function closeAlarmPopup() {
   }
 }
 
+function openInBrowser() {
+  window.open(location.href, '_blank');
+}
+
+
 
 
 
@@ -220,4 +225,12 @@ function applyCustomTimes() {
   updateCircleOpacity();
   updateCircleBorder();
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  if (ua.includes('Instagram')) {
+    document.getElementById('insta-warning').classList.remove('hidden');
+  }
+});
 
