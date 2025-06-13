@@ -9,6 +9,8 @@ let lastTimestamp;
 
 let alarmAudio = new Audio('sounds/alarm-327234.mp3');
 alarmAudio.loop = true;
+let focusMusic = document.getElementById('focus-music');
+
 
 const initialBorderWidth = 20; 
 const minimumBorderWidth = 2;  
@@ -33,6 +35,7 @@ function updateCircleBorder() {
 function startTimer() {
   if (isRunning) return;
   isRunning = true;
+  focusMusic.play().catch(() => {});
   lastTimestamp = performance.now();
   requestAnimationFrame(update);
   showButtons('pause', 'reset');
@@ -41,12 +44,14 @@ function startTimer() {
 function pauseTimer() {
   if (!isRunning) return;
   isRunning = false;
+  focusMusic.pause();
   showButtons('continue', 'reset');
 }
 
 function continueTimer() {
   if (isRunning) return;
   isRunning = true;
+  focusMusic.play().catch(() => {});
   lastTimestamp = performance.now();
   requestAnimationFrame(update);
   showButtons('pause', 'reset');
@@ -60,6 +65,8 @@ function resetTimer() {
   updateVisuals();
   showButtons('start', 'reset');
   stopAlarm();
+  focusMusic.pause(); 
+  focusMusic.currentTime = 0;
 }
 
 function update(currentTime) {
@@ -102,6 +109,8 @@ function update(currentTime) {
     elapsedTime = 0;
     updateVisuals();
     showButtons('start', 'reset');
+    focusMusic.pause();
+    focusMusic.currentTime = 0;
     return;
   }
 
