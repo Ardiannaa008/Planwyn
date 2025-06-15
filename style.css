@@ -68,7 +68,6 @@ p {
   position: fixed;
   top: 3rem;
   right: 2rem;
-  background: var(--planwyn-button-bg);
   border: 2px solid var(--planwyn-border-primary);
   border-radius: 50px;
   padding: 0.5rem;
@@ -81,8 +80,11 @@ p {
   box-shadow: 0 0 5px var(--planwyn-button-shadow);
   z-index: 1001;
   transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+
+  /* Glassmorphism blur effect */
   background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 nav ul {
