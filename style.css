@@ -143,6 +143,7 @@ nav li a:hover {
   background: var(--planwyn-button-hover-bg);
   color: var(--planwyn-button-hover-text);
   box-shadow: 0 0 10px var(--planwyn-button-hover-shadow), 0 0 20px var(--planwyn-button-hover-shadow);
+  border: none;
 }
 
 body::before {

@@ -130,9 +130,9 @@
   --planwyn-button-text: hsl(274, 65%, 48%);
   --planwyn-button-shadow: hsla(0, 0%, 0%, 0.3);
 
-  --planwyn-button-hover-bg: hsl(274, 65%, 48%);
+  --planwyn-button-hover-bg: hsl(300, 100%, 45%);
   --planwyn-button-hover-text: hsl(0, 0%, 100%);
-  --planwyn-button-hover-shadow: hsla(274, 65%, 48%, 0.5);
+  --planwyn-button-hover-shadow: hsl(300, 100%, 50%);
 
   --planwyn-overlay-gradient: linear-gradient(to bottom right,
     hsl(248, 100%, 98%),
