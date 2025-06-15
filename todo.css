@@ -1,8 +1,11 @@
+:root {
+  color-scheme: light dark;
+}
+
 body {
-  background: linear-gradient(to bottom right, #000080, #000000);
-  color: white;
+  background: var(--planwyn-bg-secondary);
+  color: var(--planwyn-text-primary);
   font-family: 'Poppins', sans-serif;
- /* padding: 40px;*/
   min-height: 100vh;
   background-size: cover;
   background-attachment: fixed;
@@ -21,7 +24,7 @@ body::before {
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #000080, #000000);
+  background: var(--muted);
   z-index: -1;
   background-size: cover;
   background-attachment: fixed;
@@ -30,8 +33,8 @@ body::before {
 .sidebar {
   height: 100vh; 
   width: 220px; 
-  background: white; 
-  color: #000080;
+  background: var(--planwyn-bg-sidebar); 
+  color: var(--planwyn-text-sidebar);
   position: fixed; 
   top: 0;
   left: 0;
@@ -39,10 +42,11 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  box-shadow: var(--planwyn-shadow-surface); 
 }
 
 .sidebar a {
-  color: #000080;
+  color: var(--planwyn-text-sidebar);
   padding: 15px;
   text-decoration: none;
   font-size: 1.2rem;
@@ -64,10 +68,10 @@ body::before {
 .todo-container {
   
   max-width: 400px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--planwyn-bg-surface);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--planwyn-shadow-surface);
 }
 
 h1 {
@@ -81,7 +85,7 @@ ul {
 }
 
 li {
-  background-color: rgba(128, 128, 128, 0.321); 
+  background-color: var(--planwyn-bg-glass);
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px;
@@ -110,13 +114,15 @@ li {
 }
 
 li:hover {
-  background-color: rgba(128, 128, 128, 0.4); /* Slightly darker on hover */
+  background-color: var(--planwyn-bg-glass-hover);
   backdrop-filter: blur(15px);
 }
 
 li.done {
-  background-color: rgba(128, 128, 128, 0.092);;
+  background-color: var();
+  color: var(--planwyn-muted-text);
   text-decoration: line-through;
+  opacity: 0.7;
   
 }
 
@@ -124,15 +130,15 @@ li.done {
 button {
   background-color: transparent;
   border: none;
-  color: white;
+  color: var(--planwyn-text-primary);
   cursor: pointer;
   font-size: 16px;
   margin: 5px;
 }
 
 button.add-btn{
-  background: #ffffffac;
-  color: #000000;
+  background: var(--planwyn-bg-glass);
+  color: var(--planwyn-text-contrast);
 }
 
 .done-btn {
@@ -140,15 +146,15 @@ button.add-btn{
 }
 
 .done-btn.done-clicked {
-  color: #bdc3c7;
+  color: var(--muted-foreground);
 }
 
 .delete-btn {
-  color: #ffffffac;
+  color: var(--planwyn-text);
 }
 
 .delete-btn:hover {
-  color: #c0392b;
+  color: var(--destructive)
 }
 
 input, button {
@@ -161,24 +167,29 @@ input, button {
 input {
   width: 80%;
   border-radius: 5px;
-  border: 1px solid #95a5a6;
+  border: 1px solid var(--planwyn-border-primary);
+  background: var(--input);
+  color: var(--foreground);
 }
 
 button.add-btn {
   padding: 12px 24px;
-  background: #6A1E9C; 
-  color: white;
-  border: none;
+  background:  var(--planwyn-button-bg); 
+  color: var(--planwyn-button-text);
+  border: 1px solid var(--planwyn-button-border);
   border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
   transition: all 0.3s ease;
+  box-shadow: 0 0 5px var(--planwyn-button-shadow);
 }
 
 button.add-btn:hover {
-  transform: scale(1.1); 
-  background-color: #6A1E9C; 
-  box-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+  transform: scale(1.05rem); 
+  background-color: var(--planwyn-button-hover-bg);
+  color: var(--planwyn-button-hover-text);
+  box-shadow: 0 0 10px var(--planwyn-button-hover-shadow);
+  transition: ease-in-out 0.25s;
 
 } 
 

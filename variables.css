@@ -1,0 +1,141 @@
+:root {
+  /* Dark Mode Colors (Default) */
+  --planwyn-logo: url('logo-dark mode.png');
+  --background: hsl(240, 100%, 25%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 0%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(300, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 40.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  --nav-hover-shadow: hsla(0, 0%, 100%, 1);
+  --checkbtn-color: hsl(0, 0%, 100%);
+
+  /* Custom Planwyn Colors - Dark Mode */
+  --planwyn-bg-primary: linear-gradient(to bottom right, hsl(240, 100%, 25%), hsl(0, 0%, 0%));
+  --planwyn-bg-secondary: hsla(0, 0%, 50%, 0.321);
+  --planwyn-bg-sidebar: hsl(266, 25%, 7%);
+  --planwyn-bg-surface: hsla(0, 0%, 0%, 0.7);
+
+  --planwyn-bg-glass:rgb(123, 111, 141);
+  --planwyn-bg-glass-hover: hsla(0, 0%, 70%, 0.321);  
+  --planwyn-done-bg: hsla(266, 10%, 35%, 0.3);
+  --planwyn-text: #f0f0f0;
+  --planwyn-muted-text: hsla(0, 0%, 70%, 1);
+  
+  --planwyn-text-primary: hsl(0, 0%, 100%);
+  --planwyn-text-secondary: hsl(0, 0%, 80%);
+  --planwyn-text-muted: hsl(0, 0%, 72%);
+  --planwyn-text-sidebar:  hsl(274, 65%, 70%);
+  --planwyn-text-contrast: hsl(0, 0%, 10%);
+  
+  --planwyn-accent-primary: hsl(300, 100%, 50%);
+  --planwyn-accent-secondary: hsl(269, 69%, 36%);
+  --planwyn-accent-tertiary: hsl(274, 65%, 48%);
+  
+  --planwyn-border-primary: hsl(0, 0%, 67%);
+  --planwyn-border-secondary: hsl(220, 13%, 82%);
+  
+  --planwyn-shadow-glow: 0 0 10px hsla(0, 0%, 100%, 0.3);
+  --planwyn-shadow-accent: 0 0 10px hsla(300, 100%, 50%, 0.5);
+  --planwyn-shadow-surface: 0 4px 10px hsla(0, 0%, 0%, 0.5);
+  --planwyn-shadow-glow-color: hsla(0, 0%, 100%, 0.5);
+
+  --planwyn-button-bg: transparent;
+  --planwyn-button-border: hsl(300, 100%, 50%);
+  --planwyn-button-text: hsl(300, 100%, 50%);
+  --planwyn-button-shadow: hsla(0, 0%, 100%, 0.5);
+
+  --planwyn-button-hover-bg: hsl(300, 100%, 50%);
+  --planwyn-button-hover-text: hsl(0, 0%, 98%);
+  --planwyn-button-hover-shadow: hsla(300, 100%, 50%, 0.7);
+
+  --planwyn-overlay-gradient: linear-gradient(to bottom right,
+    hsl(240, 100%, 25%),
+    hsl(0, 0%, 0%)
+  );
+}
+
+.light {
+  /* Light Mode Colors */
+
+  --planwyn-logo: url('logo-light mode.png');
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(240, 100%, 25%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222.2, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --primary: hsl(269, 69%, 36%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222.2, 84%, 4.9%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222.2, 84%, 4.9%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(222.2, 84%, 4.9%);
+  --nav-hover-shadow: hsla(0, 0%, 20%, 0.8);
+  --checkbtn-color: hsl(240, 100%, 25%);
+
+  /* Custom Planwyn Colors - Light Mode */
+  --planwyn-bg-primary: linear-gradient(to bottom right, hsl(248, 100%, 98%), hsl(243, 100%, 95%));
+  --planwyn-bg-secondary: hsla(269, 69%, 36%, 0.1);
+  --planwyn-bg-sidebar: hsl(0, 0%, 100%);
+  --planwyn-bg-surface: hsla(0, 0%, 100%, 0.8);
+
+  --planwyn-bg-glass: hsla(269, 69%, 36%, 0.15); 
+  --planwyn-bg-glass-hover: hsla(269, 69%, 36%, 0.25);  
+  --planwyn-done-bg: hsla(269, 20%, 50%, 0.1); 
+  --planwyn-text: #2d2d2d; 
+  --planwyn-muted-text: hsla(0, 0%, 40%, 1); 
+  
+  --planwyn-text-primary: hsl(0, 0%, 10%);
+  --planwyn-text-secondary: hsl(0, 0%, 20%);
+  --planwyn-text-muted: hsl(0, 0%, 40%);
+  --planwyn-text-sidebar: hsl(269, 69%, 36%);
+  --planwyn-text-contrast: hsl(0, 0%, 100%);
+  
+  --planwyn-accent-primary: hsl(269, 69%, 36%);
+  --planwyn-accent-secondary: hsl(274, 65%, 48%);
+  --planwyn-accent-tertiary: hsl(300, 100%, 50%);
+  
+  --planwyn-border-primary: hsl(220, 13%, 82%);
+  --planwyn-border-secondary: hsl(210, 40%, 89%);
+  
+  --planwyn-shadow-glow: 0 0 10px hsla(269, 69%, 36%, 0.2);
+  --planwyn-shadow-accent: 0 0 10px hsla(269, 69%, 36%, 0.4);
+  --planwyn-shadow-surface: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+  --planwyn-shadow-glow-color: hsla(0, 0%, 0%, 0.2);
+
+  --planwyn-button-bg: transparent;
+  --planwyn-button-border: hsl(274, 65%, 48%);
+  --planwyn-button-text: hsl(274, 65%, 48%);
+  --planwyn-button-shadow: hsla(0, 0%, 0%, 0.3);
+
+  --planwyn-button-hover-bg: hsl(274, 65%, 48%);
+  --planwyn-button-hover-text: hsl(0, 0%, 100%);
+  --planwyn-button-hover-shadow: hsla(274, 65%, 48%, 0.5);
+
+  --planwyn-overlay-gradient: linear-gradient(to bottom right,
+    hsl(248, 100%, 98%),
+    hsl(243, 100%, 95%)
+  );
+}
