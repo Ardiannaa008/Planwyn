@@ -1,3 +1,132 @@
+:root {
+  /* Dark Mode Colors (Default) */
+  --background: hsl(240, 100%, 25%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 0%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(300, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  --nav-hover-shadow: hsla(0, 0%, 100%, 1);
+  --checkbtn-color: hsl(0, 0%, 100%);
+
+  /* Custom Planwyn Colors - Dark Mode */
+  --planwyn-bg-primary: linear-gradient(to bottom right, hsl(240, 100%, 25%), hsl(0, 0%, 0%));
+  --planwyn-bg-secondary: hsla(0, 0%, 50%, 0.321);
+  --planwyn-bg-sidebar: hsl(0, 0%, 100%);
+  --planwyn-bg-surface: hsla(0, 0%, 0%, 0.7);
+  --planwyn-bg-glass: hsla(0, 0%, 50%, 0.4);
+  
+  --planwyn-text-primary: hsl(0, 0%, 100%);
+  --planwyn-text-secondary: hsl(0, 0%, 80%);
+  --planwyn-text-muted: hsl(0, 0%, 72%);
+  --planwyn-text-sidebar: hsl(240, 100%, 25%);
+  --planwyn-text-contrast: hsl(0, 0%, 10%);
+  
+  --planwyn-accent-primary: hsl(300, 100%, 50%);
+  --planwyn-accent-secondary: hsl(269, 69%, 36%);
+  --planwyn-accent-tertiary: hsl(274, 65%, 48%);
+  
+  --planwyn-border-primary: hsl(0, 0%, 67%);
+  --planwyn-border-secondary: hsl(220, 13%, 82%);
+  
+  --planwyn-shadow-glow: 0 0 10px hsla(0, 0%, 100%, 0.3);
+  --planwyn-shadow-accent: 0 0 10px hsla(300, 100%, 50%, 0.5);
+  --planwyn-shadow-surface: 0 4px 10px hsla(0, 0%, 0%, 0.5);
+  --planwyn-shadow-glow-color: hsla(0, 0%, 100%, 0.5);
+
+  --planwyn-button-bg: transparent;
+  --planwyn-button-border: hsl(300, 100%, 50%);
+  --planwyn-button-text: hsl(300, 100%, 50%);
+  --planwyn-button-shadow: hsla(0, 0%, 100%, 0.5);
+
+  --planwyn-button-hover-bg: hsl(300, 100%, 50%);
+  --planwyn-button-hover-text: hsl(0, 0%, 98%);
+  --planwyn-button-hover-shadow: hsla(300, 100%, 50%, 0.7);
+
+  --planwyn-overlay-gradient: linear-gradient(to bottom right,
+    hsl(240, 100%, 25%),
+    hsl(0, 0%, 0%)
+  );
+}
+
+.light {
+  /* Light Mode Colors */
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(240, 100%, 25%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222.2, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --primary: hsl(269, 69%, 36%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222.2, 84%, 4.9%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222.2, 84%, 4.9%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(222.2, 84%, 4.9%);
+  --nav-hover-shadow: hsla(0, 0%, 20%, 0.8);
+  --checkbtn-color: hsl(240, 100%, 25%);
+
+  /* Custom Planwyn Colors - Light Mode */
+  --planwyn-bg-primary: linear-gradient(to bottom right, hsl(248, 100%, 98%), hsl(243, 100%, 95%));
+  --planwyn-bg-secondary: hsla(269, 69%, 36%, 0.1);
+  --planwyn-bg-sidebar: hsl(0, 0%, 100%);
+  --planwyn-bg-surface: hsla(0, 0%, 100%, 0.8);
+  --planwyn-bg-glass: hsla(269, 69%, 36%, 0.15);
+  
+  --planwyn-text-primary: hsl(0, 0%, 10%);
+  --planwyn-text-secondary: hsl(0, 0%, 20%);
+  --planwyn-text-muted: hsl(0, 0%, 40%);
+  --planwyn-text-sidebar: hsl(269, 69%, 36%);
+  --planwyn-text-contrast: hsl(0, 0%, 100%);
+  
+  --planwyn-accent-primary: hsl(269, 69%, 36%);
+  --planwyn-accent-secondary: hsl(274, 65%, 48%);
+  --planwyn-accent-tertiary: hsl(300, 100%, 50%);
+  
+  --planwyn-border-primary: hsl(220, 13%, 82%);
+  --planwyn-border-secondary: hsl(210, 40%, 89%);
+  
+  --planwyn-shadow-glow: 0 0 10px hsla(269, 69%, 36%, 0.2);
+  --planwyn-shadow-accent: 0 0 10px hsla(269, 69%, 36%, 0.4);
+  --planwyn-shadow-surface: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+  --planwyn-shadow-glow-color: hsla(0, 0%, 0%, 0.2);
+
+  --planwyn-button-bg: transparent;
+  --planwyn-button-border: hsl(274, 65%, 48%);
+  --planwyn-button-text: hsl(274, 65%, 48%);
+  --planwyn-button-shadow: hsla(0, 0%, 0%, 0.3);
+
+  --planwyn-button-hover-bg: hsl(274, 65%, 48%);
+  --planwyn-button-hover-text: hsl(0, 0%, 100%);
+  --planwyn-button-hover-shadow: hsla(274, 65%, 48%, 0.5);
+
+  --planwyn-overlay-gradient: linear-gradient(to bottom right,
+    hsl(248, 100%, 98%),
+    hsl(243, 100%, 95%)
+  );
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -13,8 +142,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #000080, #000000);
-  color: white;
+  background: var(--background);
+  color: var(--foreground);
   text-align: center;
   overflow-x: hidden;
 }
@@ -23,14 +152,17 @@ h1 {
   font-size: 3rem;
   margin-bottom: 25px;
   font-weight: 600;
-  color: #CCCCCC; 
-  text-shadow: 0 0 3px #CCCCCC, 0 0 6px #999999, 0 0 12px #666666;
+  color: var(--planwyn-text-primary);
+  text-shadow:
+    0 0 3px var(--planwyn-text-primary),
+    0 0 6px var(--planwyn-text-secondary),
+    0 0 12px var(--planwyn-text-muted);
 }
 
 p {
   font-size: 1.2rem;
   font-weight: 400;
-  color: #b8b4b4;
+  color: var(--planwyn-text-muted);
   margin-bottom: 20px;
   max-width: 1000px;
   margin: 0 auto;;
@@ -48,7 +180,7 @@ p {
   z-index: 10;
   object-fit: contain;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 10px var(--planwyn-shadow-glow-color));
 }
 
 .logo:hover {
@@ -67,13 +199,13 @@ nav ul {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
-  background: transparent;
+  background: var(--planwyn-bg-secondary);
   border-radius: 50px;
   padding: 10px 40px; 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px var(--planwyn-shadow-surface);
   min-width: 600px;
   border-style: dashed;
-  border-color: #aba2a2;
+  border-color: var(--planwyn-border-primary);
   list-style: none;
   transition: all 0.3s ease;
   
@@ -81,7 +213,7 @@ nav ul {
 
 nav  a {
   font-size: 1rem;
-  color: white;
+  color: var(--foreground);
   text-decoration: none;
   font-weight: 400;
   transition: color 0.3s ease;
@@ -91,30 +223,30 @@ nav  a {
 }
 
 nav li a:hover {
-  color: white;
-  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white, 0 0 4px white, 0 0 8px white;;
+  color: var(--foreground);
+  text-shadow: 0 0 5px var(--nav-hover-shadow), 0 0 10px var(--nav-hover-shadow), 0 0 20px var(--nav-hover-shadow), 0 0 4px var(--nav-hover-shadow), 0 0 8px var(--nav-hover-shadow);;
 }
 
 .cta-button {
   padding: 12px 24px;
-  background: none;
-  border: 2px solid #FF00FF; 
-  color: #FF00FF;
+  background: var(--planwyn-button-bg);
+  border: 2px solid var(--planwyn-button-border); 
+  color: var(--planwyn-button-text);
   border-radius: 50px;
   cursor: pointer;
   font-size: 18px;
   transition: 0.3s;
   text-decoration: none;
-  box-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white;
+  box-shadow: 0 0 5px var(--planwyn-button-shadow), 0 0 10px var(--planwyn-button-shadow), 0 0 20px var(--planwyn-button-shadow), 0 0 40px var(--planwyn-button-shadow), 0 0 80px var(--planwyn-button-shadow);
   position: absolute;
   right: 25%;
   top: 70%
 }
 
 .cta-button:hover {
-  background: #FF00FF;
-  color: white;
-  box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+  background: var(--planwyn-button-hover-bg);
+  color: var(--planwyn-button-hover-text);
+  box-shadow: 0 0 10px var(--planwyn-button-hover-shadow), 0 0 20px var(--planwyn-button-hover-shadow);
 }
 
 body::before {
@@ -124,12 +256,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, #000080, #000000);
+  background: var(--planwyn-overlay-gradient);
   z-index: -1;
 }
 
 .checkbtn {
-  color: white;
+  color: var(--checkbtn-color);
   font-size: 50px;
   position: absolute;
   top: 40px;
@@ -144,20 +276,19 @@ body::before {
 }
 
 
-
-
 @media (max-width: 858px) {
   
 
   .checkbtn {
     display: block;
+    color: var(--checkbtn-color);
   }
 
   nav ul {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.4); 
+    background: var(--planwyn-bg-secondary); 
     backdrop-filter: blur(10px); 
     top: 0;
     left: -100vw;
@@ -192,7 +323,7 @@ body::before {
     width: 100%;
     padding: 15px 0;
     font-size: 20px;
-    color: white;
+    color: var(--planwyn-text-sidebar);
     text-decoration: none;
     transition: 0.3s;
   }
@@ -218,7 +349,7 @@ body::before {
 
   p {
     font-size: 1rem;
-    color: #b8b4b4;
+    color: var(--planwyn-text-muted);
     max-width: 87%;
     margin: 0 10px;
     text-align: left;
@@ -232,5 +363,8 @@ body::before {
     margin-top: 40px;
     display: block;
     text-align: center;
+    background: var(--planwyn-button-bg);
+    border: 2px solid var(--planwyn-button-border);
+    color: var(--planwyn-button-text);
   }
 }
