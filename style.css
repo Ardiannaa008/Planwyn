@@ -17,7 +17,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: var(--background);
+background: #0f0838;
+background: var(--planwyn-overlay-gradient);
   color: var(--foreground);
   text-align: center;
   overflow-x: hidden;
@@ -153,7 +154,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--planwyn-overlay-gradient);
+background: #0f0838;
+background: var(--planwyn-overlay-gradient);
   z-index: -1;
 }
 

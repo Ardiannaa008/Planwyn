@@ -66,10 +66,7 @@
   --planwyn-button-transparent: rgba(0, 0, 0, 0.2);
 
 
-  --planwyn-overlay-gradient: linear-gradient(to bottom right,
-    hsl(240, 100%, 25%),
-    hsl(0, 0%, 0%)
-  );
+  --planwyn-overlay-gradient: radial-gradient(circle, rgba(15, 8, 56, 1) 45%, rgba(6, 53, 107, 1) 100%);
 }
 
 .light {
@@ -139,8 +136,5 @@
   --planwyn-button-hover-shadow: hsl(300, 100%, 50%);
   --planwyn-button-transparent: rgba(0, 0, 0, 0.2);
 
-  --planwyn-overlay-gradient: linear-gradient(to bottom right,
-    hsl(248, 100%, 98%),
-    hsl(243, 100%, 95%)
-  );
+  --planwyn-overlay-gradient:  linear-gradient(321deg,rgba(232, 70, 135, 1) 0%, rgba(250, 235, 249, 1) 38%);
 }
