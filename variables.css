@@ -1,6 +1,6 @@
 :root {
   /* Dark Mode Colors (Default) */
-  --planwyn-logo: url('logo-dark mode.png');
+  --planwyn-logo: url('images/logo-dark\ mode.png');
   --background: hsl(240, 100%, 25%);
   --foreground: hsl(0, 0%, 100%);
   --muted: hsl(240, 3.7%, 15.9%);
@@ -75,7 +75,7 @@
 .light {
   /* Light Mode Colors */
 
-  --planwyn-logo: url('logo-light mode.png');
+  --planwyn-logo: url('images/logo-light\ mode.png');
   --background: hsl(0, 0%, 98%);
   --foreground: hsl(240, 100%, 25%);
   --muted: hsl(210, 40%, 96%);
