@@ -11,13 +11,13 @@ if (savedTheme) {
 }
 
 const isLightInit = root.classList.contains('light');
-icon.src = isLightInit ? 'navy.png' : 'yellow.png';
+icon.src = isLightInit ? 'images/navy.png' : 'images/yellow.png';
 
 themeToggle.addEventListener('click', () => {
   const isLight =root.classList.toggle('light');
   localStorage.setItem('theme', isLight ? 'light' : 'dark');
 
-  icon.src = isLight ? 'navy.png'  : 'yellow.png';
+  icon.src = isLight ? 'images/navy.png'  : 'images/yellow.png';
 });
 
 
