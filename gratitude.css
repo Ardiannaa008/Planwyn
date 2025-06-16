@@ -1,39 +1,64 @@
+:root{
+  color-scheme: light dark;
+}
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+
 body {
-  background: linear-gradient(to bottom right, #000080, #000000);
-  color: white;
+  background: var(--planwyn-bg-secondary);
+  color: var(--planwyn-text-primary);
   font-family: 'Poppins', sans-serif;
   padding: 40px;
-  min-height: 100vh;
+ 
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--muted);
+  z-index: -1;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .sidebar {
-height: 100vh; 
-width: 220px; 
-background: white; 
-color: #000080;
-position: fixed; 
-top: 0;
-left: 0;
-padding-top: 20px; 
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
+  height: 100vh; 
+  width: 220px; 
+  background: var(--planwyn-bg-sidebar); 
+  color: var(--planwyn-text-sidebar);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  padding-top: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--planwyn-shadow-surface); 
 }
 
 .sidebar a {
-color: #000080;
-padding: 15px;
-text-decoration: none;
-font-size: 1.2rem;
-margin-bottom: 10px;
-font-weight: normal;
-transition: font-weight 0.2s ease;
+  color: var(--planwyn-text-sidebar);
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: normal;
+  transition: font-weight 0.2s ease;
 }
 
 .sidebar a:hover {
-font-weight:bold;
-
+  font-weight:bold;
+  
 }
+
 
 .content {
   margin-left: 250px; 
@@ -46,27 +71,29 @@ font-weight:bold;
   display: block;
   width: 100px;
   height: 100px;
-  border: 2px dashed #f0f0f0;
+  border: 2px dashed var(--planwyn-button-text);
   border-radius: 12px;
-  color: #f0f0f0;
-  background-color: transparent;
+  color: var(planwyn-button-text);
+  background-color: var(--planwyn-button-transparent);
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
   margin-bottom: 30px;
 }
 
 .open-input-btn:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--planwyn-button-bg);
+  transition: transform 0.2s ease, 
 }
+
 
 .input-form {
   max-width: 600px;
   margin: 40px auto;
   padding: 24px;
-  background-color: #f0f0f0;
+  background-color: var(--planwyn-bg-surface);
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px var(--planwyn-shadow-surface);
   display: none;
   gap: 16px;
 }
@@ -76,11 +103,13 @@ textarea {
   height: 120px;
   padding: 14px;
   border-radius: 12px;
-  border: 1px solid #cccccc;
+  border: 1px solid var(--planwyn-border-primary);
   font-size: 16px;
   resize: none;
   outline: none;
   box-sizing: border-box;
+  background-color: var(--planwyn-bg-surface);
+  color: var(--planwyn-text-primary);
   transition: border 0.3s, box-shadow 0.3s;
 }
 
@@ -88,7 +117,9 @@ input[type="date"] {
   padding: 12px;
   font-size: 16px;
   border-radius: 12px;
-  border: 1px solid #cccccc;
+  border: 1px solid var(--planwyn-border-primary);
+  background-color: var(--planwyn-bg-surface);
+  color: var(--planwyn-text-primary);
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -97,8 +128,8 @@ input[type="date"] {
   padding: 12px 24px;
   margin: 10px;
   font-size: 16px;
-  background-color: #7a5cf0;
-  color: white;
+  background-color: var(--planwyn-accent-primary);
+  color: var(--planwyn-button-hover-text);
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -106,7 +137,8 @@ input[type="date"] {
 }
 
 #submitGratitude:hover {
-  background-color: #684ed0;
+    background-color: var(--planwyn-button-hover-bg);
+    box-shadow: 0 0 8px var(--planwyn-button-hover-shadow);
 }
 
 .line {
@@ -114,7 +146,7 @@ input[type="date"] {
   height: 2px;
   margin: 10px auto;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: var(--planwyn-text-primary);
 }
 
 .cards {
@@ -127,13 +159,13 @@ input[type="date"] {
 }
 
 .card {
-  background: white;
+  background: var(--card);
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
-  color: #000000;
+  color: var(--planwyn-text-contrast);
 }
 
 .card-header {
@@ -145,7 +177,7 @@ input[type="date"] {
 .three-dots {
   cursor: pointer;
   font-size: 18px;
-  color: black;
+  color: var(--planwyn-text-contrast);
 }
 
 .dropdown-menu {
@@ -166,15 +198,16 @@ input[type="date"] {
   width: 100%;
   text-align: left;
   cursor: pointer;
+  color: var(--planwyn-text-contrast);
 }
 
 .dropdown-menu button:hover {
-  background-color: #f0f0f0;
+  background-color: var(--planwyn-bg-secondary);
 }
 
 .card p {
   font-size: 14px;
-  color: #333;
+  color: var(--planwyn-text-);
   overflow-wrap: break-word;
 }
 
@@ -193,7 +226,7 @@ input[type="date"] {
 }
 
 .card-popup .popup-content {
-  background: white;
+  background: var(--planwyn-bg-surface);
   padding: 25px;
   border-radius: 15px;
   width: 600px;
@@ -201,6 +234,10 @@ input[type="date"] {
   word-wrap: break-word;
   word-break: normal;
   position: relative;
+}
+#editText {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .card-popup .close-btn {
@@ -210,7 +247,16 @@ input[type="date"] {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
-  color: #666;
+  color: var(--planwyn-button-hover-bg);
+
+}
+
+#saveEdit {
+  background-color: var(--planwyn-button-hover-bg);
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  padding: 5px;
 }
 .menu-toggle {
   display: none;
@@ -223,7 +269,7 @@ input[type="date"] {
   z-index: 1001;
   font-size: 1.5rem;
   cursor: pointer;
-  color: white;
+  color: var(--planwyn-text-primary);
   background-color: transparent;
 }
 
