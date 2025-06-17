@@ -12,7 +12,7 @@ body {
   background: var(--planwyn-bg-secondary);
   color: var(--planwyn-text-primary);
   font-family: 'Poppins', sans-serif;
-  padding: 40px;
+  padding: 20px;
  
 }
 body::before {
