@@ -261,8 +261,8 @@ body::before {
     display: block;
     text-align: center;
     background: var(--planwyn-button-bg);
-    border: 2px solid var(--planwyn-button-border);
-    color: var(--planwyn-button-text);
+    border: 2px solid var(--planwyn-button-starturpomodoro-border);
+    color: var(--planwyn-button-starturpomodoro-text);
   }
    #theme-toggle {
     top: auto;
