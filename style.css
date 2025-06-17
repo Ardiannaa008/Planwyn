@@ -155,6 +155,9 @@ body::before {
   height: 100%;
   background: var(--planwyn-overlay-gradient);
   z-index: -1;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .checkbtn {
