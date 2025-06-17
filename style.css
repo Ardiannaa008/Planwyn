@@ -126,8 +126,8 @@ nav li a:hover {
 .cta-button {
   padding: 12px 24px;
   background: var(--planwyn-button-bg);
-  border: 2px solid var(--planwyn-button-border); 
-  color: var(--planwyn-button-text);
+  border: 2px solid var(--planwyn-button-starturpomodoro-border); 
+  color: var(--planwyn-button-starturpomodoro-text);
   border-radius: 50px;
   cursor: pointer;
   font-size: 18px;

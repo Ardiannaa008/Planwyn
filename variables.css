@@ -59,6 +59,8 @@
   --planwyn-button-border: hsl(300, 100%, 50%);
   --planwyn-button-text: hsl(300, 100%, 50%);
   --planwyn-button-shadow: hsla(0, 0%, 100%, 0.5);
+  --planwyn-button-starturpomodoro-text: hsl(300, 100%, 50%);
+  --planwyn-button-starturpomodoro-border: hsl(300, 100%, 50%);
 
   --planwyn-button-hover-bg: hsl(300, 100%, 50%);
   --planwyn-button-hover-text: hsl(0, 0%, 98%);
@@ -139,6 +141,8 @@
   --planwyn-button-transparent: rgba(0, 0, 0, 0.2);
   --planwyn-button-starturpomodoro-bg-hover: hsl(240, 100%, 25%);
   --planwyn-button-starturpomodoro-shadow-hover: hsl(240, 100%, 30%);
+  --planwyn-button-starturpomodoro-text: hsl(240, 100%, 25%);
+  --planwyn-button-starturpomodoro-border: hsl(240, 100%, 25%);
 
   --planwyn-overlay-gradient:  linear-gradient(321deg,rgb(232, 70, 135, 1) 0%, rgba(250, 235, 249, 1) 38%);
 }
