@@ -1,16 +1,39 @@
-body {
-  background: linear-gradient(to bottom right, navy, black);
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  padding: 40px;
-  min-height: 100vh;
+:root{
+  color-scheme: light dark;
 }
 
+html, body {
+  min-height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--planwyn-bg-secondary);
+  color: var(--planwyn-text-primary);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--muted);
+  z-index: -1;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 .sidebar {
   height: 100vh;
   width: 220px;
-  background: white;
-  color: #000080;
+  background: var(--planwyn-bg-sidebar);
+  color: var(--planwyn-text-sidebar);
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +43,7 @@ body {
 }
 
 .sidebar a {
-  color: #000080;
+  color: var(--planwyn-text-sidebar);
   padding: 15px;
   text-decoration: none;
   font-size: 1.2rem;
@@ -36,17 +59,20 @@ body {
 .content {
   margin-left: 250px;
   width: 70%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
+
 
 #circle {
   width: 200px;
   height: 200px;
-  border: 20px solid violet;
+  border: 20px solid var(--planwyn-accent-primary);
   border-radius: 50%;
-  box-shadow: 0 0 20px violet;
+  box-shadow: var(--planwyn-shadow-accent);
   opacity: 1;
   transition: border-width 0.2s linear, opacity 0.2s linear;
 }
@@ -62,17 +88,18 @@ body {
   margin: 10px;
   padding: 12px 24px;
   font-size: 18px;
-  border: 2px solid violet;
-  background: none;
-  color: violet;
+  border: 2px solid var(--planwyn-button-border);
+  background: var(--planwyn-button-bg);
+  color: var(--planwyn-button-text);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 #controls button:hover {
-  background: violet;
-  color: black;
+  background: var(--planwyn-button-hover-bg);
+  color: var(--planwyn-button-hover-text);
+  box-shadow: var(--planwyn-button-hover-shadow);
 }
 
 .hidden {
@@ -84,18 +111,21 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: transparent;
   border: none;
-  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1001;
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1001;
+  color: var(--forground);
+  background-color: transparent;
 }
+
 
 #pomodoro-count {
   margin-top: 20px;
   font-size: 18px;
-  color: violet;
+  color: var(--planwyn-accent-primary);
 }
 
 #custom-settings {
@@ -108,15 +138,15 @@ body {
   width: 50px;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid violet;
+  border: 1px solid var(--planwyn-accent-primary);
 }
 
 #custom-settings button {
   margin-top: 10px;
   padding: 8px 16px;
-  border: 2px solid violet;
-  background: violet;
-  color: black;
+  border: 2px solid var(--planwyn-accent-primary);
+  background: var(--planwyn-accent-primary);
+  color: var(--muted);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s;
@@ -127,20 +157,21 @@ body {
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  background: white;
+  background: var(--planwyn-bg-surface);
   padding: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  color: var(--planwyn-text-primary);
+  box-shadow: var(--planwyn-shadow-surface);
   z-index: 9999;
   text-align: center;
 }
 
 .popup-card {
-  background-color: white;
-  color: black;
+  background-color: var(--planwyn-bg-surface);
+  color: var(--planwyn-text-primary);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: var(--planwyn-shadow-surface);
   max-width: 90%;
   font-size: 1.2rem;
 }
@@ -160,17 +191,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: var(--planwyn-text-primary);
 }
 
 .popup-content {
-  background: #fff;
-  color: black;
+  background: var(--planwyn-bg-surface);
+  color: var(--planwyn-text-primary);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
   max-width: 90%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--planwyn-shadow-surface);
 }
 
 .popup.hidden {
@@ -196,7 +227,7 @@ body {
   .content {
     margin-left: 0;
     width: 100%;
-    padding-top: 30%;
+    padding-top: 30px;
   }
 
   #custom-settings {
