@@ -14,7 +14,7 @@ body {
   background: var(--planwyn-bg-secondary);
   color: var(--planwyn-text-primary);
   font-family: 'Poppins', sans-serif;
-  padding: 20px;
+  padding: 10px;
   
  
 }
@@ -64,7 +64,7 @@ body::before {
 
 .content {
   margin-left: 250px; 
-  padding: 20px;
+  padding: 10px;
   width: 70%;
 }
 .todo-container {
