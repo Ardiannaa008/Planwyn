@@ -139,6 +139,8 @@ body::before {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid var(--planwyn-accent-primary);
+  background-color: var(--muted);
+  color: var(--planwyn-accent-primary);
 }
 
 #custom-settings button {
