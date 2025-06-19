@@ -309,3 +309,15 @@ input[type="date"] {
     margin: 0 auto;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--planwyn-bg-secondary); 
+    color: var(--planwyn-text-primary);
+  }
+
+  .three-dots {
+  color: var(--planwyn-text-primary);
+}
+
+}
