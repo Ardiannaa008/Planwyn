@@ -40,6 +40,8 @@ body::before {
   padding-top: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--planwyn-shadow-surface);
 }
 
 .sidebar a {
