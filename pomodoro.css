@@ -122,8 +122,6 @@ body::before {
   color: var(--forground);
   background-color: transparent;
 }
-
-
 #pomodoro-count {
   margin-top: 20px;
   font-size: 18px;
