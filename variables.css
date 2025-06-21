@@ -144,8 +144,5 @@
   --planwyn-button-starturpomodoro-text: hsl(240, 100%, 25%);
   --planwyn-button-starturpomodoro-border: hsl(240, 100%, 25%);
 
- /* --planwyn-overlay-gradient:  linear-gradient(321deg, #ff00ff 0%, rgba(250, 235, 249, 1) 38%); */
   --planwyn-overlay-gradient: linear-gradient(0deg,rgba(235, 115, 235, 1) 0%, rgba(255, 255, 255, 1) 27%);
-
-
 }
