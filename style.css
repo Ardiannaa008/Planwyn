@@ -566,6 +566,10 @@ body::before {
 
 
 @media (max-width: 858px) {
+  body{
+    padding: 0;
+    margin: 0;
+  }
   .home-section{
     padding: 0;
     margin: 0;
