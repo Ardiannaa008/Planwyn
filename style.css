@@ -566,7 +566,10 @@ body::before {
 
 
 @media (max-width: 858px) {
-  
+  .home-section{
+    padding: 0;
+    margin: 0;
+  }
 
   .home-section .checkbtn {
     display: block;
