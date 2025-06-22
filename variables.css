@@ -24,6 +24,8 @@
   --nav-hover-shadow: hsla(0, 0%, 100%, 1);
   --checkbtn-color: hsl(0, 0%, 100%);
   --card: hsl(210, 40%, 96%);
+  --services-bg: #121b2f;
+  --services-text: #c0d8f7;
 
   /* Custom Planwyn Colors - Dark Mode */
   --planwyn-bg-primary: linear-gradient(to bottom right, hsl(240, 100%, 25%), hsl(0, 0%, 0%));
@@ -99,6 +101,8 @@
   --nav-hover-shadow: hsla(0, 0%, 20%, 0.8);
   --checkbtn-color: hsl(240, 100%, 25%);
   --card: hsl(269, 69%, 85%);
+  --services-bg: #fff0f6;
+  --services-text: #333;
 
   /* Custom Planwyn Colors - Light Mode */
   --planwyn-bg-primary: linear-gradient(to bottom right, hsl(248, 100%, 98%), hsl(243, 100%, 95%));
