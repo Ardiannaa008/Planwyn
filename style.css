@@ -121,17 +121,15 @@ nav ul {
 nav  a {
   font-size: 1rem;
   color: var(--foreground);
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.3s ease;
   display: flex;
   align-content: space-between;
-  transition: all 0.6s ease;
+  font-weight: 800;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 nav li a:hover {
-  color: var(--foreground);
-  font-weight: 800;
+  opacity: 1;
   
 }
 
