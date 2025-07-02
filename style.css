@@ -37,12 +37,12 @@ body {
   font-size: 3rem;
   margin-bottom: 25px;
   font-weight: 600;
-  color: var(--planwyn-text-primary);
-  text-shadow:
-    0 0 3px var(--planwyn-text-primary),
-    0 0 6px var(--planwyn-text-secondary),
-    0 0 12px var(--planwyn-text-muted);
-}
+  background: -webkit-linear-gradient(#eee, #3f3fc8);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  line-height: normal;}
 
 .home-section p {
   font-size: 1.2rem;
