@@ -20,4 +20,15 @@ themeToggle.addEventListener('click', () => {
   icon.src = isLight ? 'images/navy.png'  : 'images/yellow.png';
 });
 
+const navLinks = document.querySelectorAll('nav ul li a');
+const check = document.getElementById('check');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (check.checked) {
+      check.checked = false;
+    }
+  });
+});
+
 

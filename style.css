@@ -126,11 +126,13 @@ nav  a {
   transition: color 0.3s ease;
   display: flex;
   align-content: space-between;
+  transition: all 0.6s ease;
 }
 
 nav li a:hover {
   color: var(--foreground);
-  text-shadow: 0 0 5px var(--nav-hover-shadow), 0 0 10px var(--nav-hover-shadow), 0 0 20px var(--nav-hover-shadow), 0 0 4px var(--nav-hover-shadow), 0 0 8px var(--nav-hover-shadow);;
+  font-weight: 800;
+  
 }
 
 .home-section .cta-button {
