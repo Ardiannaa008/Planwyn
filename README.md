@@ -1,6 +1,6 @@
 #Planwyn
 
-**Planwyn** is a sleek and user-friendly productivity web app designed to help users plan their day, manage tasks efficiently, and cultivate a positive mindset.
+**Planwyn** is a sleek and user-friendly productivity web app designed to help users plan their day and manage tasks efficiently.
 
 ## Features
 
