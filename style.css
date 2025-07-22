@@ -238,7 +238,7 @@ body::before {
 
 .autoShow
 animation: autoShowAnimation both;
-animation-timeline: view (40% 30%);
+animation-timeline: view (40% 20%);
 }
 @keyframes autoShowAnimation{
 from{
